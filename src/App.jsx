@@ -1,12 +1,19 @@
-function App() {
-  return (
-    <div className="flex flex-col justify-center items-center h-screen">
-      <div  className="font-thin px-10 pb-20">
-        <h1 className="text-5xl mb-2">Empty Project!</h1>
-        <p >Copy, Rename and GO</p>
-      </div>
-    </div>
-  );
-}
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Box } from "@mui/material";
+import { Navbar, Feed, VideoDetail, ChannelDetail, SearchFeed } from "./components";
+
+const App = () => (
+  <BrowserRouter>
+    <Box sx={{ backgroundColor: "#ddd" }}>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Feed />} />
+        <Route path="/video/:id" element={<VideoDetail />} />
+        <Route path="/channel/:id" element={<ChannelDetail />} />
+        <Route path="/search/:searchTerm" element={<SearchFeed />} />
+      </Routes>
+    </Box>
+  </BrowserRouter>
+);
 
 export default App;
