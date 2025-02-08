@@ -18,7 +18,7 @@ function Navbar() {
         justifyContent: "space-between",
         position: "sticky",
         top: 0,
-        bgcolor: "#212121",
+        bgcolor: "#000",
         zIndex: 1000,
         boxShadow: "0 0px 10px rgba(0, 0, 0, 0.3)",
       }}

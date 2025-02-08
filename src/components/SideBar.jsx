@@ -1,8 +1,8 @@
 import { Button, Stack } from "@mui/material";
 import { categories } from "../utils/constants";
 
-function SideBar() {
-  const selectedCategory = "New";
+// eslint-disable-next-line react/prop-types
+function SideBar({ selectedCategory, setSelectedCategory }) {
   return (
     <Stack
       direction={"row"}
@@ -15,6 +15,8 @@ function SideBar() {
       {categories.map((category, i) => (
         <Button
           key={i}
+          className="category-btn"
+          onClick={() => setSelectedCategory(category.name)}
           sx={{
             color: "#fff",
             textTransform: "capitalize",
@@ -26,9 +28,8 @@ function SideBar() {
             borderRadius: 5,
             bgcolor: selectedCategory === category.name && "#FF0000",
             ":hover": { bgcolor: "#FF0000" },
-            minWidth: { xs: "fit-content !important", md: "auto" },
+            minWidth: { xs: "fit-content !important" },
           }}
-          className="category-btn"
         >
           <span
             style={{
@@ -36,13 +37,11 @@ function SideBar() {
               color: selectedCategory === category.name ? "#fff" : "#FF0000",
             }}
           >
-            {" "}
             {category.icon}
           </span>
           <span
-            style={{ opacity: selectedCategory === category.name ? 1 : 0.8 }}
+            style={{ opacity: selectedCategory === category.name ? 1 : 0.8, textWrap: "nowrap" }}
           >
-            {" "}
             {category.name}
           </span>
         </Button>
