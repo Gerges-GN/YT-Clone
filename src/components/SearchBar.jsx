@@ -9,12 +9,18 @@ function SearchBar() {
     <Paper
       component={"form"}
       onSubmit={() => {}}
-      className="flex items-center justify-between pl-3 border border-[#3e3e3e] !rounded-[20px] "
+      sx={{
+        borderRadius: 20,
+        border: "1px solid #e3e3e3",
+        pl: 2,
+        boxShadow: "none",
+        mr: { sm: 5 },
+      }}
     >
       <input
         type="text"
         placeholder="Search"
-        className="flex items-center outline-none w-[300px]"
+        style={{ border: "none", outline: "none" }}
       />
       <IconButton>
         <Search />

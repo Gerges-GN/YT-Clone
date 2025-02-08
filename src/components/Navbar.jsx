@@ -1,19 +1,30 @@
 import { Stack } from "@mui/material";
 import { Link } from "react-router-dom";
 import { SearchBar } from "../components";
+import { logo } from "../utils/constants";
 
 function Navbar() {
   return (
     <Stack
       direction="row"
-      className="flex items-center justify-between sticky px-6 py-3 bg-black"
+      alignItems="center"
+      // p={2}
+      sx={{
+        height: "8vh",
+        overflow: "hidden",
+        m: 0,
+        p: "3vh",
+        display: "flex",
+        justifyContent: "space-between",
+        position: "sticky",
+        top: 0,
+        bgcolor: "#212121",
+        zIndex: 1000,
+        boxShadow: "0 0px 10px rgba(0, 0, 0, 0.3)",
+      }}
     >
-      <Link to="/" className="flex items-center">
-        <img
-          alt="Logo"
-          src="https://i.ibb.co/s9Qys2j/logo.png"
-          className="h-11"
-        />
+      <Link to="/" style={{ display: "flex", alignItems: "center" }}>
+        <img alt="Logo" src={logo} height={45} />
       </Link>
       <SearchBar />
     </Stack>
