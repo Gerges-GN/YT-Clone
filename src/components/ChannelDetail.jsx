@@ -13,7 +13,10 @@ function ChannelDetail() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchFromAPI(`channels?part=snippet&id=${id}`);
+      const data = await fetchFromAPI(
+        `channels?part=snippet,statistics,brandingSettings&id=${id}`
+      );
+
 
       setChannelDetail(data?.items[0]);
       fetchFromAPI(`search?channelId=${id}&part=snippet%2Cid&order=date`).then(
@@ -29,7 +32,7 @@ function ChannelDetail() {
         <div
           style={{
             height: "300px",
-            background: `center / cover no-repeat url(${channelDetail?.brandingSettings?.image?.bannerExternalUrl}) `,
+            background: `center / cover no-repeat url(${channelDetail?.brandingSettings?.image?.bannerExternalUrl})`,
             zIndex: 10,
           }}
         />
