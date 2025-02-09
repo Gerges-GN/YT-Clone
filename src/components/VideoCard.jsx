@@ -6,7 +6,6 @@ import { CheckCircle } from "@mui/icons-material";
 import {
   demoChannelTitle,
   demoChannelUrl,
-  demoProfilePicture,
   demoThumbnailUrl,
   demoVideoTitle,
   demoVideoUrl,
@@ -28,7 +27,7 @@ function VideoCard({ video }) {
         style={{ borderRadius: { sx: "0", sm: "12px" }, overflow: "hidden" }}
       >
         <CardMedia
-          image={video?.snippet?.thumbnails?.high?.url}
+          image={video?.snippet?.thumbnails?.high?.url || demoThumbnailUrl}
           alt={video?.snippet?.title}
           sx={{
             minHeight: 180,

@@ -1,11 +1,12 @@
-import data from "../utils/DB.json";
+/* eslint-disable react/prop-types */
 import { Box, Stack } from "@mui/material";
-// eslint-disable-next-line no-unused-vars
 import { VideoCard, ChannelCard } from "../components";
-function Videos() {
+
+function Videos({ videos }) {
+  console.log(videos);
   return (
     <Stack direction="row" flexWrap="wrap" gap={2} justifyContent="center">
-      {data.map((item, i) => (
+      {videos.map((item, i) => (
         <Box
           key={i}
           sx={{
@@ -16,7 +17,7 @@ function Videos() {
           }}
         >
           {item.id.videoId && <VideoCard video={item} />}
-          {/* {item.id.channelId && <ChannelCard channel={item} />} */}
+          {item.id.channelId && <ChannelCard channel={item} />}
         </Box>
       ))}
     </Stack>
