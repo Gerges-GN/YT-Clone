@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { Paper, IconButton } from "@mui/material";
 import { Search } from "@mui/icons-material";
 
@@ -12,15 +12,16 @@ function SearchBar() {
       sx={{
         borderRadius: 20,
         border: "1px solid #e3e3e3",
-        pl: 2,
+        pl:{xs:0 ,md: 2},
         boxShadow: "none",
         mr: { sm: 5 },
       }}
-    >
+      className="SearchBar"
+      >
       <input
         type="text"
         placeholder="Search"
-        style={{ border: "none", outline: "none" }}
+        style={{ border: "none", outline: "none", }}
       />
       <IconButton>
         <Search />

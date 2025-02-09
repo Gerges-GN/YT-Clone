@@ -13,7 +13,7 @@ function Videos({ videos }) {
             display: "flex",
             flexWrap: "wrap",
             gap: 2,
-            width: { xs: "100%", sm: "358px", md: "320px" },
+            maxWidth: { xs: "100%", sm: "320px" },
           }}
         >
           {item.id.videoId && <VideoCard video={item} />}

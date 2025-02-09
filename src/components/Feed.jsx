@@ -12,12 +12,22 @@ function Feed() {
   }, [selectedCategory]);
 
   return (
-    <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
+    <Stack
+      sx={{
+        flexDirection: { sx: "column", md: "row" },
+        height:  "calc(100vh - 75px)" ,
+        // overflowY: "hidden",
+      }}
+    >
       <Box
         sx={{
           height: { sx: "auto", md: "86vh" },
           borderRight: "1px solid #3d3d3d",
           px: { sx: 0, md: 2 },
+          display: "flex",
+          flexDirection: { xs: "row", md: "column" },
+          aignItems: "center",
+          justifyContent: "space-between",
         }}
       >
         <SideBar
@@ -25,12 +35,18 @@ function Feed() {
           setSelectedCategory={setSelectedCategory}
         />
 
-        <Typography variant="body2" sx={{ color: "#fff", textWrap: "nowrap" }}>
+        <Typography sx={{ color: "#fff", fontSize: "11px", textWrap: "nowrap", display: {xs: "none", md: "block"} }}>
           Copyright 2025 Gerges Naguib
         </Typography>
       </Box>
 
-      <Box>
+      <Box
+      sx={{
+        overflowY: "scroll",
+        height: "100%",
+        width: "100%",
+       
+      }}>
         <Typography
           variant="h4"
           sx={{ fontWeight: "bold", color: "#fff", mb: 2, p: 2 }}
@@ -38,7 +54,7 @@ function Feed() {
           {selectedCategory} <span style={{ color: "#FF0000" }}>Videos</span>
         </Typography>
 
-        <Videos videos={videos}/>
+        <Videos videos={videos} />
       </Box>
     </Stack>
   );
