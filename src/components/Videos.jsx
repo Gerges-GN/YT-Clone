@@ -3,7 +3,6 @@ import { Box, Stack } from "@mui/material";
 import { VideoCard, ChannelCard } from "../components";
 
 function Videos({ videos }) {
-  console.log(videos);
   return (
     <Stack direction="row" flexWrap="wrap" gap={2} justifyContent="center">
       {videos.map((item, i) => (
@@ -17,7 +16,7 @@ function Videos({ videos }) {
           }}
         >
           {item.id.videoId && <VideoCard video={item} />}
-          {item.id.channelId && <ChannelCard channel={item} />}
+          {item.id.channelId && <ChannelCard channelDetail={item} />}
         </Box>
       ))}
     </Stack>

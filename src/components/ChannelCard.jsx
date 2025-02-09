@@ -4,8 +4,12 @@ import { CheckCircle } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { demoProfilePicture } from "../utils/constants";
 
-function ChannelCard({ channel }) {
-  console.log(channel);
+function ChannelCard({ channelDetail, marginTop }) {
+  console.log("channelDetail ");
+  console.log(channelDetail);
+  console.log(channelDetail?.id?.channelId);
+  console.log(channelDetail?.id);
+
   return (
     <Box
       sx={{
@@ -17,9 +21,10 @@ function ChannelCard({ channel }) {
         width: { xs: "356px", md: "320px" },
         height: "326px",
         margin: "auto",
+        marginTop: marginTop,
       }}
     >
-      <Link to={`/channel/${channel?.id?.channelId}`}>
+      <Link to={`/channel/${channelDetail?.id?.channelId}`}>
         <CardContent
           sx={{
             display: "flex",
@@ -31,10 +36,10 @@ function ChannelCard({ channel }) {
         >
           <CardMedia
             image={
-              channel?.snippet?.thumbnails?.high?.url ||
+              channelDetail?.snippet?.thumbnails?.high?.url ||
               demoProfilePicture
             }
-            alt={channel?.snippet?.title}
+            alt={channelDetail?.snippet?.title}
             sx={{
               borderRadius: "50%",
               height: "180px",
@@ -44,15 +49,15 @@ function ChannelCard({ channel }) {
             }}
           />
           <Typography variant="h6">
-            {channel?.snippet?.title}{" "}
+            {channelDetail?.snippet?.title}{" "}
             <CheckCircle sx={{ fontSize: "14px", color: "gray", ml: "5px" }} />
           </Typography>
-          {channel?.statistics?.subscriberCount && (
+          {channelDetail?.statistics?.subscriberCount && (
             <Typography
               sx={{ fontSize: "15px", fontWeight: 500, color: "gray" }}
             >
               {parseInt(
-                channel?.statistics?.subscriberCount
+                channelDetail?.statistics?.subscriberCount
               ).toLocaleString("en-US")}{" "}
               Subscribers
             </Typography>

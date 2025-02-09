@@ -12,6 +12,8 @@ import {
 } from "../utils/constants";
 
 function VideoCard({ video }) {
+  // console.log("videoCard");
+  // console.log(video);
   return (
     <Card
       sx={{
