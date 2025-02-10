@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
 
-import { Videos, ChannelCard } from "./";
+import { Videos, ChannelCard, Loader } from "./";
 import { fetchFromAPI } from "../utils/fetchFromAPI.js";
 
 function ChannelDetail() {
@@ -17,7 +17,6 @@ function ChannelDetail() {
         `channels?part=snippet,statistics,brandingSettings&id=${id}`
       );
 
-
       setChannelDetail(data?.items[0]);
       fetchFromAPI(`search?channelId=${id}&part=snippet%2Cid&order=date`).then(
         (video) => setVideos(video.items)
@@ -25,7 +24,7 @@ function ChannelDetail() {
     };
     fetchData();
   }, [id]);
-  console.log(channelDetail);
+  if (!ChannelDetail || !videos) return <Loader />;
   return (
     <Box minHeight={"90%"}>
       <Box>
@@ -38,7 +37,7 @@ function ChannelDetail() {
         />
         <ChannelCard channelDetail={channelDetail} marginTop="-93px" />
       </Box>
-      <Box p={2} display="flex">
+      <Box display="flex">
         <Box sx={{}} />
         <Videos videos={videos} />
       </Box>

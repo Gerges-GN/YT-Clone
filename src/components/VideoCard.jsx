@@ -10,10 +10,10 @@ import {
   demoVideoTitle,
   demoVideoUrl,
 } from "../utils/constants";
-
 function VideoCard({ video }) {
   // console.log("videoCard");
-  // console.log(video);
+  console.log(video);
+  console.log(video?.id?.channelId);
   return (
     <Card
       sx={{
@@ -32,12 +32,10 @@ function VideoCard({ video }) {
           image={video?.snippet?.thumbnails?.high?.url || demoThumbnailUrl}
           alt={video?.snippet?.title}
           sx={{
-            minHeight: 180,
+            minHeight: 200,
             minWidth: 358,
           }}
-        >
-          
-        </CardMedia>
+        ></CardMedia>
       </Link>
 
       {/* Card content */}
@@ -63,8 +61,8 @@ function VideoCard({ video }) {
         {/* Channel */}
         <Link
           to={
-            video?.id?.channelId
-              ? `/video/${video?.id?.channelId}`
+            video?.snippet?.channelId
+              ? `/channel/${video?.snippet?.channelId}`
               : demoChannelUrl
           }
         >

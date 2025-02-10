@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Box, Typography } from "@mui/material";
-import { Videos } from "../components";
+import { Loader, Videos } from "../components";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 import { useParams } from "react-router-dom";
 
@@ -16,6 +16,7 @@ function SearchFeed() {
     fetchData();
   }, [searchTerm]);
 
+    if (!videos) return <Loader />;
   return (
     <Box
       minHeight={"90%"}

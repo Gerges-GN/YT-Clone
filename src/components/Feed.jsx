@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { Box, Stack, Typography } from "@mui/material"
-import {SideBar, Videos} from "../components"
+import {Loader, SideBar, Videos} from "../components"
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 
 function Feed() {
@@ -13,8 +13,7 @@ function Feed() {
     ).then((data) => setVideos(data.items));
   }, [selectedCategory]);
   
-  console.log(videos);
-  console.log({videos});
+  if (!videos) return <Loader />;
 
   return (
     <Stack
