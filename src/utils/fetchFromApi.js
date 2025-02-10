@@ -6,6 +6,7 @@ const options = {
   url: BASE_URL,
   params: {
     maxResults: "50",
+    regionCode: 'EG',
   },
   headers: {
     "x-rapidapi-key": import.meta.env.VITE_YOUTUBE_API_KEY,
