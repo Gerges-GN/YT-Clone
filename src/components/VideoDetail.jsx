@@ -28,7 +28,10 @@ function VideoDetail() {
     getRelatedVideos();
   }, [id]);
 
+
+
   if (!videoDetail) return <Loader />;
+  console.log(id)
 
   const {
     snippet: { title, channelId, channelTitle },
