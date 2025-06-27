@@ -8,8 +8,6 @@ A fully functional and responsive YouTube Clone built with **React**, featuring 
 
 📁 **GitHub Repo:** [YT-Clone](https://github.com/Gerges-GN/YT-Clone)
 
-- [Material UI (MUI)](https://mui.com/) – React UI framework
-
 ## Features
 
 - **Video Search & Playback**  
@@ -30,11 +28,11 @@ A fully functional and responsive YouTube Clone built with **React**, featuring 
 - [React.js](https://reactjs.org/) – JavaScript UI library
 - [React Router](https://reactrouter.com/) – Client-side routing
 - [YouTube Data API v3](https://rapidapi.com/googlecloud/api/youtube-v31) via [RapidAPI](https://rapidapi.com/)
+- [Material UI (MUI)](https://mui.com/) – React UI framework
 
 ## Screenshots
 
-![home-screen](/home-screen.webp)
-![preview](/yt-clone.webp)
+![home-screen](./public/home-screen.webp)
 
 ---
 
